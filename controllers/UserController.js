@@ -64,6 +64,7 @@ res.status(500).json(err);
 }
 },
 
+//Delete User
 async DeleteUser (req, res) {
 try {
 const user = await User.findOneAndRemove({_id: req.params.userId});
@@ -105,7 +106,7 @@ res.json(user);
 res.status(500).json(err);
 }
 },
-
+//Delete Friend from User's Friend List
 async DeleteFriend(req, res) {
     try {
       const user = await User.findOneAndUpdate(

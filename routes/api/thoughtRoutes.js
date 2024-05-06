@@ -1,4 +1,5 @@
 const router = require('express').Router();
+//Importing Functions from Thought Controller to Assign To Routes
 const { 
 getThoughts,
 getSingleThought,
