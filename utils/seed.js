@@ -1,5 +1,7 @@
 const connection = require('../config/connection');
+//Import User and Thought Models
 const { User, Thought } = require('../models');
+//Import Test Data for Seeding
 const { thoughtss, userdata, reactions } = require('./data.js');
 
 

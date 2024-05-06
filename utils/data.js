@@ -1,3 +1,4 @@
+//Test User Data
 const userdata = [
 {
  username: 'MaryJonesdabomb2',
@@ -32,7 +33,7 @@ const userdata = [
  email: 'ripcod20002018@yahoo.com'
 }
 ];
-
+//Test thoughts
 const thoughtss = [
 'Jordan is not a better basketball player than Lebron.',
 'Pizza Hut is the most overrated franchise in America.',
@@ -44,6 +45,7 @@ const thoughtss = [
 'If 1 + 1 = 2 and 2 + 2 = 4, then why does 3 + 3 not equal 7?'
 ];
 
+//Test Reactions
 const reactions = [
 {reactionBody: 'Great Post!'},
 {reactionBody: 'I completely agree with you!'},
