@@ -1,23 +1,36 @@
-const usernames = [
-'MaryJonesdabomb2',
-'Bob_Riley1988',
-'SarahClive4Real',
-'PeterGriffin_01',
-'JakeAr39',
-'ApplevSamsung',
-'Sweetpie',
-'ActivisionSucks',
-];
-
-const emails = [
-'appleuser123@gmail.com',
-'waterisgood@yahoo.com',
-'myexample@example.com',
-'testemail@testme.com',
-'powerwithin@power.com',
-'codingwarrior@hotmail.com',
-'proofimreal@testrecord.com',
-'gettingtired@sleepy.com'
+const userdata = [
+{
+ username: 'MaryJonesdabomb2',
+ email: 'appleuser123@gmail.com'
+},
+{
+ username: 'Bob_Riley1988',
+ email: 'waterisgood@yahoo.com'
+},
+{
+ username: 'SarahClive4Real',
+ email: 'swampthing005@outlook.com'
+},
+{
+ username: 'PeterGriffin_01',
+ email: 'birdistheword2008@gmail.com'
+},
+{
+ username: 'JakeAr39',
+ email: 'nuggetssweepla40@gmail.com'
+},
+{
+ username: 'ApplevSamsung',
+ email: 'dagreaterphone2014@gmail.com'
+},
+{
+ username: 'Sweetpie',
+ email: 'ilovepie599@yahoo.com'
+},
+{
+ username: 'ActivisionSucks',
+ email: 'ripcod20002018@yahoo.com'
+}
 ];
 
 const thoughtss = [
@@ -32,78 +45,16 @@ const thoughtss = [
 ];
 
 const reactions = [
-'Great Post!',
-'I completely agree with you!',
-'Is it possible to get more context on what youre talking about?',
-'Another great post!',
-'How do I submit a reaction?',
-'Keep giving it all you got!',
-'Nice thought!',
-'I never considered that from that perspective.'
+{reactionBody: 'Great Post!'},
+{reactionBody: 'I completely agree with you!'},
+{reactionBody: 'Is it possible to get more context on what youre talking about?'},
+{reactionBody: 'Another great post!'},
+{reactionBody: 'How do I submit a reaction?'},
+{reactionBody: 'Nice thought!'},
+{reactionBody: 'I never considered that from that perspective.'},
+{reactionBody: 'Keep giving it all you got!'},
+
 ];
 
 
-// Get a random item given an array
-const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
-
-//Gets a random username
-const getRandomUserName = () => `${getRandomArrItem(usernames)}`;
-
-const getRandomThoughts = () => `${getRandomArrItem(thoughtss)}`;
-
-//Gets a random email
-const getRandomEmail = () => `${getRandomArrItem(emails)}`;
-
-const getRandomReactions = () => `${getRandomReactions(reactions)}`;
-
-//Gets random user data based on user model
-
-const users = usernames.map((user) => {
-const userobj = {};
-userobj.username = user;
-userobj.email = getRandomEmail();
-userobj.thoughts = [];
-userobj.friends = [];
-const friends = getRandomUserName(3);
-const thoughts = getRandomThoughts(3);
-
-for (const friend of friends) {
-const friendsobj = {};
-friendsobj.username = friend;
-userobj.friends.push(friendsobj);
-}
-
-for (const thought of thoughts) {
-const thoughtsobj = {};
-thoughtsobj.thought = thought;
-userobj.thoughts.push(thoughtsobj);
-}
-
-return userobj;
-});
-
-//Gets thought data based on Thought model
-const thoughts = (users) => {
-const thoughtData = thoughts.map((thought) => {
-const thoughtobj = {};
-thoughtobj.thoughtText = thought;
-const user = users.find((user) => user.username === getRandomUserName());
-thoughtobj.username = user.username;
-thoughtobj.reactions = [];
-const reactions = getRandomReactions(3);
-
-for (const reaction of reactions) {
-const reactionobj = {};
-reactionobj.reactionBody = reaction;
-reactionobj.username = getRandomUserName();
-thoughtobj.reactions.push(reactionobj);
-}
-return thoughtobj;
-});
-return thoughtData;
-}
-
-
-
-
-module.exports = { users, thoughts };
+module.exports = { thoughtss, userdata, reactions };
